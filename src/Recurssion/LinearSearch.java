@@ -11,6 +11,8 @@ public class LinearSearch {
         System.out.println(linearSearch2(arr, target, 0));
         returnAllIndices(arr, target, 0);
         System.out.println(list);
+        System.out.println(findAllIndices(arr, target, 0, new ArrayList<>()));
+        System.out.println(findIndices(arr, target, 0));
     }
 
     // find index from start
@@ -48,5 +50,28 @@ public class LinearSearch {
             list.add(index);
         }
         returnAllIndices(arr, target, index + 1);
+    }
+
+    // returning an ArrayList by passing into as an argument
+    static ArrayList<Integer> findAllIndices(int[] arr, int target, int index, ArrayList<Integer> list) {
+        if(index == arr.length)
+            return list;
+        if(arr[index] == target)
+            list.add(index);
+        return findAllIndices(arr, target, index + 1, list);
+    }
+
+    // returning an ArrayList without passing an argument
+    static ArrayList<Integer> findIndices(int[] arr, int target, int index) {
+        // at every function call a new ArrayList will be created
+        ArrayList<Integer> list = new ArrayList<>();
+        if(index == arr.length)
+            return list;
+        // this will contain answer for that function call only
+        if(arr[index] == target)
+            list.add(index);
+        ArrayList<Integer> ansFromBelowCalls = findIndices(arr, target, index + 1);
+        list.addAll(ansFromBelowCalls); // adding all the answers we have till now adding that to the list
+        return list;
     }
 }
