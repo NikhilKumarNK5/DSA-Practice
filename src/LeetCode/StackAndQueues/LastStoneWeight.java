@@ -81,6 +81,7 @@ public class LastStoneWeight {
             }
         }
 
+        // if the queue is empty return 0 else the last element from queue
         return pq.isEmpty() ? 0 : pq.poll();
     }
 }
