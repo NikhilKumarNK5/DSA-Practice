@@ -63,7 +63,7 @@ public class FibonacciNumber {
     // Instead of maintaining a DP array, we can just have two different variables to track the prev two values and calculate current based upon that
     // TC => O(N)
     // SC => O(1)
-    public int fibSpaceOptimizedDP(int n) {
+    public int fib(int n) {
         if(n == 0)
             return 0;
 
