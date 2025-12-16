@@ -35,6 +35,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MinimumSumPartition {
+
+    // Approach: Same as the Subset sum problem with using a possible sum array and that can store all the possible sums of subset less than the totalSum
+    // TC => O(n * totalSums)
+    // SC => O(n * totalSums)
     public int minDifference(int arr[]) {
         int n = arr.length;
 
