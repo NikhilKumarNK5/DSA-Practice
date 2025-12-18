@@ -109,8 +109,8 @@ public class CoinChange {
     public int coinChange3(int[] coins, int amount) {
         int[] dp = new int[amount + 1];
 
-        Arrays.fill(dp, Integer.MAX_VALUE);
-        dp[0] = 0;
+        Arrays.fill(dp, Integer.MAX_VALUE); // for amount greater than 0 we do not know the min coins needed so we set them to max value
+        dp[0] = 0; // if the amount is 0 then we do not need any coins
 
         for(int i = 1; i <= amount; i++) {
             for(int coin : coins) {
